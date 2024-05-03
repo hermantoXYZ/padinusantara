@@ -1,0 +1,67 @@
+{% extends 'home/base.html' %}
+{% block title %}Pondok Pesantren Imam Asy-syathiby Wahdah Islamiyah Gowa{% endblock %}
+{% block content %}
+<!-- component -->
+
+<div class="hero">
+<nav class="navbar">
+    <div class="navbar-logo">
+        <a href="#"><img src="/media/logo/logo-1.png" alt="Logo"></a>
+        <span class="logo-text">PADINUSANTARA</span>
+      </div>
+
+      <button class="mobile-menu-button" onclick="toggleMobileMenu()">
+        &#9776; <!-- Unicode character for hamburger icon -->
+    </button>
+
+    <ul class="navbar-nav">
+      <li class="nav-item"><a href="#">Home</a></li>
+      <li class="nav-item"><a href="#">About</a></li>
+      <li class="nav-item"><a href="#">Services</a></li>
+      <li class="nav-item"><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+    <button class="close-button" onclick="closeMobileMenu()">
+        &#10006; <!-- Unicode character for close icon -->
+    </button>
+</div>
+<div class="hero-content">
+    <h1>Inspiration, Innovation, and Interaction</h1>
+    <p>Bringing Creations to Life Through Information, Art, and Technology</p>
+    <button class="get-started-button">Get Started</button>
+    <button class="get-started-button">Contact Us</button>
+</div>
+</div>
+
+<section class="partners-section">
+    <h2>Trusted by Leading Companies</h2>
+    <div class="partners-grid">
+        <figure class="partner">
+            <img src="/media/logo/logo-p.svg" alt="Partner 1">
+            
+        </figure>
+        <figure class="partner">
+            <img src="/media/logo/logo-p.svg" alt="Partner 1">
+            
+        </figure>
+
+       
+        
+       
+        <button>Click Me</button>
+
+        <!-- Tambahkan figure lainnya sesuai dengan kebutuhan -->
+    </div>
+</section>
+
+
+
+  
+{% endblock %}

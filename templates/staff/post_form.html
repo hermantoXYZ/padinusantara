@@ -1,0 +1,189 @@
+<!-- student/dashboard.html -->
+{% extends 'home/base.html' %}
+{% block title %}{% if form.instance.pk %}Edit Post{% else %}Create Post{% endif %}{% endblock %}
+{% block content %}
+<main>
+    <section class="py-lg-7 py-5 bg-light-subtle">
+        <div class="container">
+           <div class="row">
+              <div class="col-lg-3 col-md-4">
+                 <div class="d-flex align-items-center mb-4 justify-content-center justify-content-md-start">
+                    <img src="/" alt="avatar" class="avatar avatar-lg rounded-circle">
+                    <div class="ms-3">
+                       <h5 class="mb-0">{{ user.username }}</h5>
+                       <small>Personal account Staff</small>
+                    </div>
+                 </div>
+    
+                 <!-- Navbar -->
+                 <div class="mb-4 text-center text-md-start">
+                    <a href="#" class="text-reset">
+                       <span>
+                          <span>View site / profile</span>
+                       </span>
+                       <span class="ms-2">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                             <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"></path>
+                             <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"></path>
+                          </svg>
+                       </span>
+                    </a>
+                 </div>
+                 <div class="d-md-none text-center d-grid">
+                    <button class="btn btn-light mb-3 d-flex align-items-center justify-content-between" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAccountMenu" aria-expanded="false" aria-controls="collapseAccountMenu">
+                       Account Menu
+                       <i class="bi bi-chevron-down ms-2"></i>
+                    </button>
+                 </div>
+                 
+
+             <!--START LIST NAV ITEM-->
+             <div class="collapse d-md-block" id="collapseAccountMenu">
+               <ul class="nav flex-column nav-account">
+                   <li class="nav-item">
+                       <a class="nav-link active" href="{% url 'staff' %}">
+                        <i class="bi bi-emoji-grimace-fill"></i>
+                           <span class="ms-2">Profile</span>
+                       </a>
+                    </li>
+                   <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="{% url 'post_list' %}">
+                       <i class="bi bi-newspaper"></i>
+                       <span class="ms-2">Agenda</span>
+                    </a>
+                 </li>
+                 <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="{% url 'page_list_staff' %}">
+                       <i class="bi bi-file-earmark-break"></i>
+                       <span class="ms-2">Pages</span>
+                    </a>
+                 </li>
+                 <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="{% url 'media_list_staff' %}">
+                       <i class="bi bi-braces-asterisk"></i>
+                       <span class="ms-2">Media</span>
+                    </a>
+                  <li class="nav-item">
+                     <a class="nav-link" aria-current="page" href="{% url 'staff_stats' %}">
+                        <i class="bi bi-bar-chart"></i>
+                        <span class="ms-2">Stats</span>
+                     </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="{% url 'contact_list' %}">
+                       <i class="bi bi-chat-dots-fill"></i>
+                       <span class="ms-2">Pesan Contact</span>
+                    </a>
+                 </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="{% url 'logout' %}">
+                        <i class="bi bi-box-arrow-left"></i>
+                        <span class="ms-2">Sign Out</span>
+                     </a>
+                  </li>
+               </ul>
+            </div>
+             <!--END LIST NAV ITEM-->
+
+
+              </div>
+              <!--End Navbar-->
+    
+
+<!-- CONTENT BODY -->
+<div class="col-lg-9 col-md-8">
+
+    <div class="card border-0 shadow-sm mb-4">
+       <div class="card-body p-lg-5">
+          <div class="mb-5">
+             <h4 class="mb-1">{% if form.instance.pk %}Edit Post{% else %}Create Post{% endif %}</h4>
+             <p class="mb-0 fs-6">Share personal information.</p>
+          </div>
+
+          <form method="post" enctype="multipart/form-data">
+           {% csrf_token %}
+           
+           <div class="form-group first">
+               <label for="id_title">Title: </label>
+               {{ form.title }}
+               <div class="invalid-feedback">Please enter a student.</div>
+           </div>
+       
+           <div class="form-group">
+               <label for="id_images">Upload Gambar</label>
+               {{ form.images }}
+           </div>
+       
+           <div class="form-group">
+            <label for="id_content">Content:</label>
+            {{ form.content }}
+            <script src="https://cdn.tiny.cloud/1/17500otq8xaigsm2ycdwhypuyn5wrwkxm4jhuubwc1wf9hlm/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+            <script>
+                tinymce.init({
+                    selector: '#id_content',
+                    plugins: 'advlist autolink lists link image charmap print preview anchor searchreplace visualblocks code fullscreen insertdatetime media table paste code help wordcount',
+                    toolbar: 'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | image link | help',
+                    file_picker_callback: function (cb, value, meta) {
+                        var input = document.createElement("input");
+                        input.setAttribute("type", "file");
+                        if (meta.filetype == "image") {
+                            input.setAttribute("accept", "image/*");
+                        }
+                        if (meta.filetype == "media") {
+                            input.setAttribute("accept", "video/*");
+                        }
+        
+                        input.onchange = function () {
+                            var file = this.files[0];
+                            var reader = new FileReader();
+                            reader.onload = function () {
+                                var id = "blobid" + (new Date()).getTime();
+                                var blobCache = tinymce.activeEditor.editorUpload.blobCache;
+                                var base64 = reader.result.split(",")[1];
+                                var blobInfo = blobCache.create(id, file, base64);
+                                blobCache.add(blobInfo);
+                                cb(blobInfo.blobUri(), { title: file.name });
+                            };
+                            reader.readAsDataURL(file);
+                        };
+                        input.click();
+                    }
+                });
+            </script>
+        </div>
+        
+        
+       
+           <div class="form-group">
+               <label for="id_author">Author:</label>
+               {{ form.author }}
+           </div>
+
+           <div class="form-group">
+            <label for="id_category">Category:</label>
+            {{ form.category }}
+        </div>
+       
+        <input type="submit" value="Save Changes" class="btn btn-primary">
+         
+       </form>
+       </div>
+    </div>
+ </div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+</section>
+
+</main>
+
+
+
+{% endblock %}

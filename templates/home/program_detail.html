@@ -1,0 +1,189 @@
+{% extends 'home/base.html' %}
+{% block title %} {{ program.title }} {% endblock %}
+{% block content %}
+
+<section class="jarallax py-9 hero-agency" data-jarallax="" data-speed="0.4" style="position: relative; z-index: 0;">
+            
+    <div class="position-absolute start-0 end-0">
+       <div class="container">
+          <div class="row">
+             <div class="col-xl-5 col-lg-7 col-12" data-cue="zoomIn" data-show="true" style="animation-name: zoomIn; animation-duration: 600ms; animation-timing-function: ease; animation-delay: 0ms; animation-direction: normal; animation-fill-mode: both;">
+                <div class="text-center text-lg-start">
+                   <div class="mb-4 text-white-stable">
+                      
+                      <h1 class="mb-3 mt-3 display-3 text-white-stable">{{ program.title }}</h1>
+                      <p class="lead mb-0">Pondok Pesantren Imam Asy-syathiby Wahdah Islamiyah Gowa</p>
+                   </div>
+
+                   <a href="#!" class="btn btn-success">{{ program.penanggung_jawab }}</a>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ <div id="jarallax-container-0" class="jarallax-container" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; overflow: hidden; z-index: -100; clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%);"><img class="jarallax-img" src="{{ program.images.url }}" alt="agency" style="object-fit: cover; object-position: 50% 50%;  filter: brightness(50%); max-width: none; position: fixed; top: 0px; left: 0px; width: 390px; height: 775.2px; overflow: hidden; pointer-events: none; transform-style: preserve-3d; backface-visibility: hidden; margin-top: 34.4px; transform: translate3d(0px, -34.4px, 0px);"></div></section>
+
+  
+ <section class="mb-xl-9 my-4">
+    <div class="container">
+       <div class="row">
+          <div class="col-lg-8">
+             <div class="row gy-lg-7 gy-5">
+                <div class="mt-6">
+                    <h2>{{ program.title }}</h2>
+                    <p>{{ program.content|safe|linebreaks }}</p>
+                 </div>
+              
+             </div>
+          </div>
+          <aside class="col-lg-4">
+             <div class="offcanvas-lg offcanvas-end" id="blog-sidebar" tabindex="-1" aria-labelledby="blog-sidebar" style="max-width: 340px">
+                <div class="offcanvas-header">
+                   <h5 class="offcanvas-title h4" id="blog-sidebar">Sidebar</h5>
+                   <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#blog-sidebar"></button>
+                </div>
+                <div class="offcanvas-body flex-column">
+                   <div class="mb-4">
+                      <form>
+                         <label for="formGroupExampleInput" class="form-label visually-hidden">Example label</label>
+                         <input type="search" class="form-control" id="formGroupExampleInput" placeholder="Search Blog">
+                      </form>
+                   </div>
+
+                   <div class="card mb-4">
+                     <div class="card-body">
+                        <h5 class="mb-4">Bidang Lainnya</h5>
+                        <ul class="list-unstyled mb-0">
+                           {% for other_program in program_list %}
+
+
+
+                           <div class="d-grid gap-2">
+                              <a href="{% url 'program_detail' slug=other_program.slug %}" class="btn btn-primary" role="button">{{ other_program.title }}</a>
+                          </div>
+                        
+                            {% endfor %}
+
+                        </ul>
+                     </div>
+                  </div>
+
+                   <div class="card mb-4">
+                      <div class="card-body">
+                         <h5 class="mb-4">Categories</h5>
+                         <ul class="list-unstyled mb-0">
+                            <li class="mb-2">
+                               <svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                  <circle cx="8" cy="8" r="8"></circle>
+                               </svg>
+                               <a href="#!" class="text-reset ms-2 fw-medium">
+                                  All
+                                  <span class="text-body-tertiary">(42)</span>
+                               </a>
+                            </li>
+                            <li class="mb-2">
+                               <svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                  <circle cx="8" cy="8" r="8"></circle>
+                               </svg>
+                               <a href="#!" class="text-reset ms-2 fw-medium">
+                                  Business
+                                  <span class="text-body-tertiary">(21)</span>
+                               </a>
+                            </li>
+                            <li class="mb-2">
+                               <svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                  <circle cx="8" cy="8" r="8"></circle>
+                               </svg>
+                               <a href="#!" class="text-reset ms-2 fw-medium">
+                                  Marketing
+                                  <span class="text-body-tertiary">(18)</span>
+                               </a>
+                            </li>
+                            <li class="mb-2">
+                               <svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                  <circle cx="8" cy="8" r="8"></circle>
+                               </svg>
+                               <a href="#!" class="text-reset ms-2 fw-medium">
+                                  Courses
+                                  <span class="text-body-tertiary">(9)</span>
+                               </a>
+                            </li>
+                            <li class="mb-2">
+                               <svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                  <circle cx="8" cy="8" r="8"></circle>
+                               </svg>
+                               <a href="#!" class="text-reset ms-2 fw-medium">
+                                  Dashboard
+                                  <span class="text-body-tertiary">(5)</span>
+                               </a>
+                            </li>
+                            <li class="mb-2">
+                               <svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                  <circle cx="8" cy="8" r="8"></circle>
+                               </svg>
+                               <a href="#!" class="text-reset ms-2 fw-medium">
+                                  Landings
+                                  <span class="text-body-tertiary">(12)</span>
+                               </a>
+                            </li>
+                            <li class="mb-2">
+                               <svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                  <circle cx="8" cy="8" r="8"></circle>
+                               </svg>
+                               <a href="#!" class="text-reset ms-2 fw-medium">
+                                  E-commerce
+                                  <span class="text-body-tertiary">(6)</span>
+                               </a>
+                            </li>
+                         </ul>
+                      </div>
+                   </div>
+
+
+            
+                   <div class="bg-primary bg-opacity-10 px-5 pt-5 pb-7 mb-2 rounded-3 text-center mb-4">
+                      <div class="icon-shape bg-primary bg-opacity-10 icon-xl rounded-circle mb-4">
+                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-envelope-check text-primary-emphasis" viewBox="0 0 16 16">
+                            <path d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-.966-.741l5.64-3.471L8 9.583l7-4.2V8.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2H2Zm3.708 6.208L1 11.105V5.383l4.708 2.825ZM1 4.217V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.217l-7 4.2-7-4.2Z"></path>
+                            <path d="M16 12.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Zm-1.993-1.679a.5.5 0 0 0-.686.172l-1.17 1.95-.547-.547a.5.5 0 0 0-.708.708l.774.773a.75.75 0 0 0 1.174-.144l1.335-2.226a.5.5 0 0 0-.172-.686Z"></path>
+                         </svg>
+                      </div>
+                      <div class="mb-4">
+                         <h4>Subscribe to our newsletter</h4>
+                         <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipiscing elit phasellus amet dui quam vitae quis leo velit aliquam.</p>
+                      </div>
+                      <form class="row g-3 needs-validation d-flex">
+                         <div class="col-md-7 col-lg-12 col-12">
+                            <label for="subscribeEmail" class="form-label visually-hidden">Email</label>
+
+                            <input type="email" class="form-control" id="subscribeEmail" placeholder="Enter your email address" aria-label="Enter your business email" required="">
+                         </div>
+                         <div class="col-md-5 col-lg-12 col-12">
+                            <div class="d-grid">
+                               <button class="btn btn-primary" type="submit">Subscribe</button>
+                            </div>
+                         </div>
+                      </form>
+                   </div>
+                   <div class="card mb-4">
+                      <div class="card-body">
+                         <h5 class="mb-4">Popular posts</h5>
+
+                         {% for post in news %}
+                         <h6 class="mb-3">
+                            <a href="{% url 'news_detail' slug=post.slug %}" class="text-reset">{{ post.title }}</a>
+                         </h6>
+                         {% endfor %}
+                         <hr class="my-4">
+
+                    
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </aside>
+       </div>
+    </div>
+ </section>
+
+{% endblock %}

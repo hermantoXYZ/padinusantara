@@ -1,0 +1,133 @@
+<!-- student/dashboard.html -->
+{% extends 'home/base.html' %}
+{% block title %}Halaman{% endblock %}
+{% block content %}
+<main>
+    <section class="py-lg-7 py-5 bg-light-subtle">
+        <div class="container">
+           <div class="row">
+              <div class="col-lg-3 col-md-4">
+                 <div class="d-flex align-items-center mb-4 justify-content-center justify-content-md-start">
+                    <img src="/" alt="avatar" class="avatar avatar-lg rounded-circle">
+                    <div class="ms-3">
+                       <h5 class="mb-0">{{ user.username }}</h5>
+                       <small>Personal account Staff</small>
+                    </div>
+                 </div>
+    
+                 <!-- Navbar -->
+                 <div class="mb-4 text-center text-md-start">
+                    <a href="#" class="text-reset">
+                       <span>
+                          <span>View site / profile</span>
+                       </span>
+                       <span class="ms-2">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                             <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"></path>
+                             <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"></path>
+                          </svg>
+                       </span>
+                    </a>
+                 </div>
+                 <div class="d-md-none text-center d-grid">
+                    <button class="btn btn-light mb-3 d-flex align-items-center justify-content-between" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAccountMenu" aria-expanded="false" aria-controls="collapseAccountMenu">
+                       Account Menu
+                       <i class="bi bi-chevron-down ms-2"></i>
+                    </button>
+                 </div>
+
+                 
+           
+             <!--START LIST NAV ITEM-->
+             <div class="collapse d-md-block" id="collapseAccountMenu">
+                <ul class="nav flex-column nav-account">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'staff' %}">
+                         <i class="bi bi-emoji-grimace-fill"></i>
+                            <span class="ms-2">Profile</span>
+                        </a>
+                     </li>
+                    <li class="nav-item">
+                     <a class="nav-link" aria-current="page" href="{% url 'post_list' %}">
+                        <i class="bi bi-newspaper"></i>
+                        <span class="ms-2">Agenda</span>
+                     </a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" aria-current="page" href="{% url 'page_list_staff' %}">
+                        <i class="bi bi-file-earmark-break"></i>
+                        <span class="ms-2">Pages</span>
+                     </a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" aria-current="page" href="{% url 'media_list_staff' %}">
+                        <i class="bi bi-braces-asterisk"></i>
+                        <span class="ms-2">Media</span>
+                     </a>
+                   <li class="nav-item">
+                      <a class="nav-link" aria-current="page" href="{% url 'staff_stats' %}">
+                         <i class="bi bi-bar-chart"></i>
+                         <span class="ms-2">Stats</span>
+                      </a>
+                   </li>
+                   <li class="nav-item">
+                     <a class="nav-link" aria-current="page" href="{% url 'contact_list' %}">
+                        <i class="bi bi-chat-dots-fill"></i>
+                        <span class="ms-2">Pesan Contact</span>
+                     </a>
+                  </li>
+                   <li class="nav-item">
+                      <a class="nav-link" href="{% url 'logout' %}">
+                         <i class="bi bi-box-arrow-left"></i>
+                         <span class="ms-2">Sign Out</span>
+                      </a>
+                   </li>
+                </ul>
+             </div>
+              <!--END LIST NAV ITEM-->
+
+              </div>
+              <!--End Navbar-->
+    
+
+
+
+              <div class="col-lg-9 col-md-8">
+            
+                <div class="card border-0 shadow-sm mb-4">
+                    <div class="card-body p-lg-5">
+                        <div class="mb-5">
+                            <h4 class="mb-1">Post List</h4>
+                            <p class="mb-0 fs-6">Browse through the list of posts.</p>
+                        </div>
+                         <!-- Search Form -->
+         
+                        {% for page in page_objects %}
+                        <div class="alert alert-success d-flex align-items-center" role="alert">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                              class="bi bi-check-circle-fill me-2" viewBox="0 0 16 16">
+                              <path
+                                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                            </svg>
+                            <div>
+                                <h6 class="mb-0"><a class="mb-0" href="{% url 'page_update' pk=page.pk %}">{{ page.title }}</a>
+                                </h6>
+                            </div>
+                          </div>
+                         {% endfor %}
+                    </div>
+                </div>
+                
+             </div>
+
+
+
+
+       </div>
+    </div>
+ </section>
+</main>
+
+
+
+{% endblock %}
