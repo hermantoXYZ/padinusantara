@@ -3,11 +3,15 @@ html, body {
     width: 100%;
     margin: 0;
     padding: 0;
+    background-color: #F1FAF9;
+    background-image: url("https://pura.ae/images/bg-pattern.png");
+    background-repeat: repeat;
+
 }
 
 .hero {
     position: relative;
-    background-image: url("/media/assets/web.jpeg");
+    background-image: url("https://pura.ae/images/home-banner.jpg");
     background-size: cover;
     height: 700px;
     background-position: center; /* Center the background image */
@@ -28,7 +32,7 @@ html, body {
     list-style-type: none; /* Menghilangkan bullet point pada list */
     align-items: center; /* Mengatur item agar selalu berada di tengah secara vertikal */
     justify-content: space-between; /* Mengatur agar item pada navbar terdistribusi secara merata */
-    background-color: #00389a; /* Mengatur warna latar belakang navbar */
+    background-color: #036432; /* Mengatur warna latar belakang navbar */
     padding: 10px 20px; /* Penyesuaian padding pada navbar */
     border-radius: 40px; /* Memberikan sudut melengkung pada navbar */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Menambahkan shadow pada navbar */
@@ -191,7 +195,7 @@ html, body {
 }
 
 .get-started-button {
-    background-color: #00389a;
+    background-color: #5e6461;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -210,12 +214,18 @@ html, body {
 
 
 .partners-section {
-    padding: 50px 0; /* Tambahkan padding sesuai kebutuhan */
-    text-align: center; /* Center the content */
+    padding: 50px 0;
+    text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: #000000;
-    color: #fff9;
+    color: rgb(255 255 255 / 60%);
+    margin: 70px 100px 80px 80px;
+    border-radius: 30px;
+    background-size: cover;
+    background-position: center;
+    background-image: linear-gradient(to bottom, rgb(0 102 4) 0%, rgb(0 0 0 / 0%) 150%), url(https://pura.ae/_next/static/media/cta-consultation.d14629c4.jpg);
 }
+
+
 
 .partners-section h2 {
     margin-bottom: 30px; /* Tambahkan margin bottom untuk judul */
@@ -236,3 +246,66 @@ html, body {
     height: 100px;
 }
 
+
+main {
+ 
+   display: block;
+   margin-top: 0%;
+   padding: 0;  
+   font-family: Arial, Helvetica, sans-serif;
+
+  
+}
+
+.contact-hero {
+    background-color: #f2f9f6;
+    padding: 50px 40px;
+    text-align: center;
+    position: relative; /* or absolute */
+    top: 0; /* or other appropriate value */
+    margin: -100px 80px 80px;
+    border-radius: 30px;
+    color: #006532;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+input[type="text"], input[type="email"], textarea {
+    width: 80%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    display: inline-block;
+    margin: 10px;
+  }
+  
+  input[type="submit"] {
+    background-color: #5e6461;
+    color: white;
+
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+
+  .contact-item-post {
+    display: flex;
+    margin: 20px;
+  }
+
+
+  
+  .partners-section-text, h3 {
+    margin: 20px;
+    text-align: center;
+  }
