@@ -299,13 +299,26 @@ input[type="text"], input[type="email"], textarea {
   }
 
   .contact-item-post {
-    display: flex;
+    display: block;
     margin: 20px;
   }
 
 
   
-  .partners-section-text, h3 {
+  .partners-section-text, h3, p {
     margin: 20px;
     text-align: center;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  h3 {
+    color: #006532;
+    font-size: 30px;
+  } 
+
+  .card {
+    color: #000000;
+    background-color: #ffffff;
+    box-sizing: inherit;
   }
