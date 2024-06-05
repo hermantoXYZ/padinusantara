@@ -11,6 +11,7 @@ urlpatterns = [
     path('halaman/<slug:slug>/', views.page_detail, name='page_detail'),
     path('contact/', views.contact_form, name='contact_form'),
     path('program/<slug:slug>/', views.program_detail, name='program_detail'),
+    path('penerbit/', views.daftar_buku, name='penerbit'),
 
 
 

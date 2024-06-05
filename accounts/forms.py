@@ -20,6 +20,8 @@ class ContactForm(forms.ModelForm):
         model = Contact
         fields = ['name', 'email', 'phone_number', 'message']
 
+
+
 class PageForm(forms.ModelForm):
     class Meta:
         model = Page

@@ -5,9 +5,28 @@ from django.utils.text import slugify
 from django.db.models.signals import pre_save
 from django.dispatch import receiver
 
+from datetime import datetime
+import uuid
+import os
 
 # Create your models here.
 
+
+
+def rename_image(instance, filename):
+    upload_to = 'images/'
+    ext = filename.split('.')[-1]
+    
+    if hasattr(instance, 'judul') and instance.judul:
+        filename = f"{slugify(instance.judul)}_{datetime.now().strftime('%Y%m%d%H%M%S')}.{ext}"
+    elif hasattr(instance, 'title') and instance.title:
+        filename = f"{slugify(instance.title)}_{datetime.now().strftime('%Y%m%d%H%M%S')}.{ext}"
+    elif instance.pk:
+        filename = f"{instance.pk}_{datetime.now().strftime('%Y%m%d%H%M%S')}.{ext}"
+    else:
+        filename = f"{datetime.now().strftime('%Y%m%d%H%M%S')}.{ext}"
+    
+    return os.path.join(upload_to, filename)
 
 class User(AbstractUser):
     is_admin= models.BooleanField('Is admin', default=False)
@@ -69,7 +88,7 @@ class Contact(models.Model):
 
 class Page(models.Model):
     title = models.CharField(max_length=100)
-    images = models.ImageField(upload_to='page_images/', null=True, blank=True)
+    images = models.ImageField(upload_to=rename_image, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     content = models.TextField()
     slug = models.SlugField(max_length=200, unique=True, blank=True)
@@ -88,3 +107,14 @@ class Program(models.Model):
     def __str__(self):
         return self.title
     
+
+class Buku(models.Model):
+    judul = models.CharField(max_length=200)
+    harga = models.DecimalField(max_digits=10, decimal_places=2)
+    ISBN = models.CharField(max_length=200, unique=True)
+    berat = models.DecimalField(max_digits=5, decimal_places=2)
+    sinopsis = models.TextField()
+    images = models.ImageField(upload_to=rename_image, null=True, blank=True)
+
+    def __str__(self):
+        return self.judul

@@ -2,21 +2,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="{% block description %} {% endblock %}">
-  <link rel="apple-touch-icon" sizes="180x180" href="/" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/" />
-  <!-- <link rel="stylesheet" href="{% static 'src/output.css' %}"> -->
-  <link rel="stylesheet" href="/static/style.css">
-  <link rel="shortcut icon" href="/" />
-  <title>{% block title %}{% endblock %}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}PADINUSANTARA{% endblock %}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}?v={{ STATIC_VERSION }}">
 </head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <a href="/">
+                <img src="/media/assets/logo_v1.png" alt="Logo">
+            </a>
+        </div>
+        <div class="menu">
+            <a href="/">Home</a>
+            <a href="#">Article</a>
+            <div class="dropdown">
+                <div class="dropbtn" >Portofolio<i class="fa-solid fa-chevron-down"></i></div>
+                <div class="dropdown-content">
+                    <a href="#">Web App</a>
+                    <a href="#">Mobile App</a>
+          
+                </div>
+            </div>
+            <a href="/penerbit/">Penerbitan</a>
+            <a href="/contact/">Contact</a>
+            <a href="http://127.0.0.1:8000/#scrollToTeam">Our Team</a>        
+        </div>
+        <div class="icons">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fa-solid fa-bars mobile-icon" onclick="toggleMenu()"></i>
+            
 
- 
+        </div>
+    </div>
+    
+
+    {% block content %}
+    {% endblock %}
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h2>Tentang Kami</h2>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="#">Contact us</a></li>
+                    <li><a href="#">Our Team</a></li>
+                    <li><a href="/halaman/tentang-kami/">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h2>Accounts</h2>
+                <ul>
+                    <li><a href="/register">Register</a></li>
+                    <li><a href="/admin">Login</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h2>Ikuti Kami</h2>
+                <div class="social-icons">
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+            </div>
+            <div class="footer-section">
+                <div class="company-info">
+                    <img src="/media/assets/logo_v1.png" alt="Company Logo">
+                    <p>Praksis Digital Nusantara adalah perusahaan yang berdedikasi untuk menyediakan beragam layanan dalam berbagai bidang teknologi dan pendidikan. Layanan produk digital berupa aplikasi web based, aplikasi mobila app, ebook, dll.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 
-    {% block content %}{% endblock %}
-    <script src="/static/script.js"></script>
-    </html>
+</body>
+
+<script>let currentSlide=0;function showSlide(index){const slides=document.getElementsByClassName('carousel-item');if(index>=slides.length){currentSlide=0;}if(index<0){currentSlide=slides.length-1;}for(let i=0;i<slides.length;i++){slides[i].style.display='none';}slides[currentSlide].style.display='block';}function nextSlide(){currentSlide++;showSlide(currentSlide);}function prevSlide(){currentSlide--;showSlide(currentSlide);}showSlide(currentSlide);</script>
+
+
+<script>
+    function toggleCard(card) {
+    card.classList.toggle('flipped');
+}
+</script>
+
+<script>
+    function toggleMenu() {
+        const menu = document.querySelector('.navbar .menu');
+        menu.classList.toggle('show');
+    }
+</script>
+
+
+<script>
+    document.getElementById("scrollToTeam").onclick = function() {
+        document.querySelector(".container-team").scrollIntoView({
+            behavior: 'smooth'
+        });
+    };
+</script>
+<script src="/static/js/SlideTestimoni.js"></script>
+
+</html>

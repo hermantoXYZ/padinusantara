@@ -1,762 +1,306 @@
 <!-- student/dashboard.html -->
 {% extends 'home/base.html' %}
-{% block title %}Pondok Pesantren Imam Asy-syathiby Wahdah Islamiyah Gowa{% endblock %}
+{% block title %}PADINUSANTARA.com{% endblock %}
 {% block content %}
+<div class="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="/media/assets/banner.png" alt="Praksis Digital Nusantara">
+            <div class="carousel-caption">
+                <h1 class="title_banner">Praksis Digital Nusantara</h1>
+                <p class="desc_banner">Praksis Digital Nusantara adalah perusahaan yang berdedikasi untuk menyediakan beragam layanan dalam berbagai bidang teknologi dan pendidikan.</p>
+                <a href="/halaman/tentang-kami/" class="info-button">About Us</a>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="/media/assets/onn.jpg" alt="Slide 2">
+            <div class="carousel-caption">
+                <h1 class="title_banner">Praksis Digital Nusantara</h1>
+                <p class="desc_banner"> Layanan produk digital berupa aplikasi web based, aplikasi mobila app, ebook, dll. Layanan non digital video profil, buku, desain produk, produk desain dan video.</p>
+                <a href="/halaman/tentang-kami/" class="info-button">About Us</a>
+            </div>
+        </div>
+        
+    </div>
+    <button class="carousel-control prev" onclick="prevSlide()">&#10094;</button>
+    <button class="carousel-control next" onclick="nextSlide()">&#10095;</button>
+</div>
 
-<div class="container mx-auto mt-10">
-    <h1 class="text-2xl font-bold text-center text-blue-700">Welcome to My Django Project!</h1>
-    <div class="flex justify-center mt-4">
-        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Click Me</button>
+<div class="card-container">
+    <div class="card">
+        <img src="/media/assets/tech1.png" alt="Profesional">
+        <div class="card-content">
+            <h3>Profesional</h3>
+            <p>Kami berkomitmen untuk memberikan pelayanan terbaik kepada klien kami.</p>
+        </div>
+    </div>
+    <div class="card">
+        <img src="/media/assets/pc.png" alt="Integritas">
+        <div class="card-content">
+            <h3>Integritas</h3>
+            <p>Kami mengutamakan kejujuran dan kepercayaan dalam aktivitas bisnis kami.</p>
+        </div>
+    </div>
+    <div class="card">
+        <img src="/media/assets/laptop.png" alt="Kualitas">
+        <div class="card-content">
+            <h3>Kualitas</h3>
+            <p>Memberikan kualitas yang terbaik kepada klien Praksis Digital Nusantara.</p>
+        </div>
+    </div>
+    <div class="card">
+        <img src="/media/assets/inn.jpg" alt="Kualitas">
+        <div class="card-content">
+            <h3>Inovasi</h3>
+            <p>Merupakan fondasi kami untuk menciptakan produk terbaik bagi Klien.
+</p>
+        </div>
     </div>
 </div>
 
-<main>
-            <!--online-->
-            <section class="mb-xl-9 my-5">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="swiper sliderSwiper">
-                                <div class="swiper-wrapper pb-7">
-                                    <div class="swiper-slide">
-                                        <div class="card shadow-sm overflow-hidden">
-                                            <div class="row g-0">
-                                                <div class="col-xl-6 col-md-6">
-                                                    <div class="card-body h-100 d-flex align-items-start flex-column p-lg-7">
-                                                        <div class="mb-3">
-                                                    
-                                                            <h2 class="mb-0 mt-3"><a href="#" class="text-reset">Pondok Pesantren Imam Asy-syathiby Wahdah Islamiyah Gowa</a></h2>
-                                                        </div>
-                                                      
-                                                        <div class="mt-auto">
-                                                            <a href="{{ 'register' }}" class="btn btn-primary me-2" data-cue="slideInDown" data-group="page-title-buttons" data-delay="800" data-show="true" style="animation-name: slideInDown; animation-duration: 600ms; animation-timing-function: ease; animation-delay: 800ms; animation-direction: normal; animation-fill-mode: both;">Register</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6" style="background-image: url(/media/page_images/IMG-20230119-WA0028.jpeg); background-size: cover; background-repeat: no-repeat; background-position: center; min-height: 15rem;">
-                                                    <!-- for mobile img-->
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- More swiper slides follow with similar structure -->
-                                    <div class="swiper-slide">
-                                        <div class="card shadow-sm overflow-hidden">
-                                            <div class="row g-0">
-                                                <div class="col-xl-6 col-md-6">
-                                                    <div class="card-body h-100 d-flex align-items-start flex-column p-lg-7">
-                                                        <div class="mb-3">
-                                                            <small class="text-uppercase fw-semibold ls-md">Online</small>
-                                                            <h2 class="mb-0 mt-3"><a href="#" class="text-reset">Pondok Pesantren Imam Asy-syathiby Wahdah Islamiyah Gowa</a></h2>
-                                                        </div>
-                                                        <div class="mb-5">
-                                                            <small class="me-2">June 22, 2024</small>
-                                                            <small>1:00PM EDT</small>
-                                                        </div>
-                                                        <div class="mt-auto">
-                                                            <a href="{{ 'register' }}" class="btn btn-primary me-2" data-cue="slideInDown" data-group="page-title-buttons" data-delay="800" data-show="true" style="animation-name: slideInDown; animation-duration: 600ms; animation-timing-function: ease; animation-delay: 800ms; animation-direction: normal; animation-fill-mode: both;">Try for Free</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6" style="background-image: url(/media/page_images/DSC01749.jpeg); background-size: cover; background-repeat: no-repeat; background-position: center; min-height: 15rem;">
-                                                    <!-- for mobile img-->
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-pagination"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-<!--online-->
 
-<!--Developer events start-->
-<section class="my-xl-9 my-5">
-    <div class="container">
-        <div class="row mt-lg-5 mt-1 g-5">
-            <div class="col-lg-10 offset-lg-1">
-                <div class="row g-5">
-                    <div class="col-md-3 col-6">
-                        <div class="text-center">
-                            <div class="d-flex justify-content-center">
-                                <h2 class="counter mb-0" data-count="{{ stats.staffs }}">0</h2>
-                                <span class="ms-1 fs-2 text-dark">+</span>
-                            </div>
-                            <small>Staff</small>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-6">
-                        <div class="text-center">
-                            <div class="d-flex justify-content-center">
-                                <h2 class="counter mb-0" data-count="{{ stats.students }}">0</h2>
-                                <span class="ms-1 fs-2 text-dark">+</span>
-                            </div>
-                            <small>Jumlah Siswa</small>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-6">
-                        <div class="text-center">
-                            <div class="d-flex justify-content-center">
-                                <h2 class="counter mb-0" data-count="{{ stats.teachers }}">0</h2>
-                                <span class="ms-1 fs-2 text-dark">+</span>
-                            </div>
-                            <small>Tenaga Pengajar</small>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-6">
-                        <div class="text-center">
-                            <div class="d-flex justify-content-center">
-                                <h2 class="counter mb-0" data-count="{{ stats.registrations }}">0</h2>
-                                <span class="ms-1 fs-2 text-dark">+</span>
-                            </div>
-                            <small>Peminat</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<div class="card-container-services">
+    <div class="card-text">
+        <p class="text-center">Layanan Kami</p>
+        <h1 class="title-services">Transforming Ideas into Digital Realities</h1>
+    </div>
+
+    <div class="card-services-container">
+    <div class="card-services">
+        <div class="card-content-services">
+            <h3>Penerbitan Buku</h3>
+            <p>Melakukan Penerbitan Surat Kabar, Jurnal dan Buletin atau Majalah.
+            </p>
+        </div>
+        <div class="card-icon-services">
+            <i class="fa-solid fa-book fa-2x"></i>
         </div>
     </div>
-</section>
-<!--Developer events end-->
-
-<!--Modern tech start-->
-<section class="py-xl-9 py-5 bg-light">
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-6 offset-xl-3 col-md-12 col-12">
-                <div class="text-center mb-xl-7 mb-5">
-                    <small class="text-uppercase ls-md fw-semibold">modern
-                        tech stack</small>
-                    <h2 class="my-3">Mitra Kami</h2>
-                    <p class="mb-0 text-body">
-                        We work with cutting-edge technologies designed to
-                        solve your product requirements. Focus on finding
-                        solutions for your business needs while we handle
-                        the technical
-                        aspect.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-10 offset-lg-1 col-md-12 col-12">
-                <div
-                    class="row row-cols-lg-5 row-cols-md-4 row-cols-2 justify-content-center g-5">
-                    <div class="col">
-                        <figure class="text-center mb-0">
-                            <img src="/media/assets/logo11.png" class="logo-img"
-                                alt="logo" />
-                        </figure>
-                    </div>
-
-                    <div class="col">
-                        <figure class="text-center mb-0">
-                            <img src="/media/assets/logo2.png" class="logo-img"
-                                alt="logo" />
-                        </figure>
-                    </div>
-
-                    <div class="col">
-                        <figure class="text-center mb-0">
-                            <img src="/media/assets/logo4.png" class="logo-img"
-                                alt="logo" />
-                        </figure>
-                    </div>
-
-                    <div class="col">
-                        <figure class="text-center mb-0">
-                            <img src="/media/assets/logo1.png" class="logo-img"
-                                alt="logo" />
-                        </figure>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!--Modern tech end-->    
-
-    <div class="container">
-        <div class="row">
-        <div class="col-lg-12">
-        <div class="text-center mb-7">
-      
-        <h2 class="mt-3 mb-0">Article Our</h2>
-        </div>
-        </div>
-        </div>
-
-        <div class="table-responsive-lg">
-        <div class="row g-5 flex-nowrap pb-4 pb-lg-0 me-5 me-lg-0">
-
-        {% for news in news_list %}
-        <article class="col-lg-4 col-md-6 col-12" data-cue="zoomIn" data-show="true" style="animation-name: zoomIn; animation-duration: 600ms; animation-timing-function: ease; animation-delay: 0ms; animation-direction: normal; animation-fill-mode: both;">
-        <figure class="mb-4 zoom-img">
-        <a href="{% url 'news_detail' slug=news.slug %}">
-        {% if news.images %}
-        <img src="{{ news.images.url }}" alt="blog" class="img-fluid rounded-3" style="max-height: 300px;">
-        </a>
-        {% endif %}
-        </figure>
-        <a href="/kategori/digital/" class="badge bg-primary-subtle text-primary-emphasis rounded-pill text-uppercase">{{ news.category }}</a>
-        <h3 class="my-3 lh-base h4">
-        <a href="{% url 'news_detail' slug=news.slug %}" class="text-reset">{{ news.title }}</a>
-        </h3>
-        <div class="d-flex align-items-center justify-content-between mb-3 mb-md-0">
-        <div class="d-flex align-items-center">
-        <img src="/media/assets/admin.png" alt="Avatar" class="avatar avatar-xs rounded-circle">
-        <div class="ms-2">
-        <a href="#" class="text-reset fs-6">{{ news.author }}</a>
-        </div>
-        </div>
-        <div class="ms-3"><span class="fs-6">{{ news.created_at }}</span></div>
-        </div>
-        </article>
-        {% endfor %}
-        </div>
-        </div>
-
-
-        <div class="row">
-            <div class="col-lg-12" data-cue="zoomIn">
-               <div class="mt-lg-8 mt-5">
-              <!-- Pagination START -->
-          <nav class="mt-4 d-flex justify-content-center" aria-label="navigation">
-              <ul class="pagination flex-wrap justify-content-center pagination-bordered mb-0">
-                  {% if news_list.has_previous %}
-                      <li class="page-item">
-                          <a class="page-link" href="?page=1" tabindex="-1" aria-disabled="true">Prev</a>
-                      </li>
-                  {% else %}
-                      <li class="page-item disabled">
-                          <span class="page-link" tabindex="-1" aria-disabled="true">Prev</span>
-                      </li>
-                  {% endif %}
-      
-                  {% for i in news_list.paginator.page_range %}
-                      {% if news_list.number == i %}
-                          <li class="page-item active">
-                              <span class="page-link">{{ i }}</span>
-                          </li>
-                      {% elif i > news_list.number|add:'-3' and i < news_list.number|add:'3' %}
-                          <li class="page-item">
-                              <a class="page-link" href="?page={{ i }}">{{ i }}</a>
-                          </li>
-                      {% elif i == news_list.number|add:'-3' or i == news_list.number|add:'3' %}
-                          <li class="page-item disabled">
-                              <span class="page-link">..</span>
-                          </li>
-                      {% endif %}
-                  {% endfor %}
-      
-                  {% if news_list.has_next %}
-                      <li class="page-item">
-                          <a class="page-link" href="?page={{ news_list.paginator.num_pages }}">Next</a>
-                      </li>
-                  {% else %}
-                      <li class="page-item disabled">
-                          <span class="page-link">Next</span>
-                      </li>
-                  {% endif %}
-              </ul>
-          </nav>
-               </div>
-            </div>
-         </div>
-        </div>
-
-         <!--Fasilitas Pondok-->
-<section class="py-xl-9 py-5 bg-light">
-    <div class="container">
-       <div class="row">
-          <div class="col-lg-8 offset-lg-2 col-12">
-             <div class="text-center mb-xl-7 mb-5">
-                <small class="text-uppercase ls-md fw-semibold text-primary">Generasi Qur’ani dan Berprestasi</small>
-                <h2 class="my-3">PPDB 2024</h2>
-                <p class="mb-0 text-body">
-                Pondok Tahfizhul Quran Imam Asy-Syathiby Wahdah Islamiyah Gowa
+    <div class="card-services">
+        <div class="card-content-services">
+            <h3>Produksi Media</h3>
+            <p>Creative Design & Creative Video: Melakukan Aktivitas Produksi Film, Video dan Program televisi oleh Swasta.
                 </p>
-             </div>
-          </div>
-       </div>
-       <div class="center-item">
-      
-          <div class="col-lg-2 col-md-4 col-6">
-             <a href="#!" class="card-hover bg-white card card-lift text-center p-4">
-                <span class="border rounded-circle icon-shape icon-xxl mb-4">
-                   <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                         opacity="0.2"
-                         d="M27 14.1338V20.7863C27.0006 21.0307 26.9116 21.2668 26.75 21.45C25.3375 23.0238 21.8875 26 16 26C10.1125 26 6.665 23.0238 5.25 21.45C5.08837 21.2668 4.99944 21.0307 5 20.7863V14.1338L16 20L27 14.1338Z" />
-                      <path
-                         d="M31.4697 11.1176L16.4697 3.11758C16.325 3.04054 16.1636 3.00024 15.9997 3.00024C15.8358 3.00024 15.6744 3.04054 15.5297 3.11758L0.529688 11.1176C0.369693 11.2028 0.235888 11.33 0.142587 11.4854C0.0492867 11.6409 0 11.8188 0 12.0001C0 12.1814 0.0492867 12.3593 0.142587 12.5147C0.235888 12.6702 0.369693 12.7973 0.529688 12.8826L3.99969 14.7338V20.7863C3.99865 21.2775 4.17942 21.7517 4.50719 22.1176C6.14469 23.9413 9.81344 27.0001 15.9997 27.0001C18.0509 27.017 20.0867 26.6455 21.9997 25.9051V30.0001C21.9997 30.2653 22.105 30.5196 22.2926 30.7072C22.4801 30.8947 22.7345 31.0001 22.9997 31.0001C23.2649 31.0001 23.5193 30.8947 23.7068 30.7072C23.8943 30.5196 23.9997 30.2653 23.9997 30.0001V24.9388C25.3037 24.1861 26.4821 23.2342 27.4922 22.1176C27.82 21.7517 28.0007 21.2775 27.9997 20.7863V14.7338L31.4697 12.8826C31.6297 12.7973 31.7635 12.6702 31.8568 12.5147C31.9501 12.3593 31.9994 12.1814 31.9994 12.0001C31.9994 11.8188 31.9501 11.6409 31.8568 11.4854C31.7635 11.33 31.6297 11.2028 31.4697 11.1176ZM15.9997 25.0001C10.5909 25.0001 7.40969 22.3576 5.99969 20.7863V15.8001L15.5297 20.8826C15.6744 20.9596 15.8358 20.9999 15.9997 20.9999C16.1636 20.9999 16.325 20.9596 16.4697 20.8826L21.9997 17.9338V23.7263C20.4247 24.4613 18.4397 25.0001 15.9997 25.0001ZM25.9997 20.7813C25.4002 21.4465 24.7296 22.0438 23.9997 22.5626V16.8663L25.9997 15.8001V20.7813ZM23.4997 14.8676L23.4722 14.8513L16.4722 11.1176C16.2386 10.9983 15.9676 10.9755 15.7174 11.0542C15.4672 11.1328 15.258 11.3066 15.1347 11.5381C15.0114 11.7695 14.984 12.0402 15.0583 12.2917C15.1327 12.5431 15.3029 12.7554 15.5322 12.8826L21.3747 16.0001L15.9997 18.8663L3.12469 12.0001L15.9997 5.13383L28.8747 12.0001L23.4997 14.8676Z" />
-                   </svg>
-                </span>
-                <h4 class="mb-0 card-text fs-5">SMP (Putra)</h4>
-             </a>
-          </div>
-          <div class="col-lg-2 col-md-4 col-6">
-             <a href="#!" class="card-hover bg-white card card-lift text-center p-4">
-                <span class="border rounded-circle icon-shape icon-xxl mb-4">
-                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                       <path
-                          opacity="0.2"
-                          d="M27 14.1338V20.7863C27.0006 21.0307 26.9116 21.2668 26.75 21.45C25.3375 23.0238 21.8875 26 16 26C10.1125 26 6.665 23.0238 5.25 21.45C5.08837 21.2668 4.99944 21.0307 5 20.7863V14.1338L16 20L27 14.1338Z" />
-                       <path
-                          d="M31.4697 11.1176L16.4697 3.11758C16.325 3.04054 16.1636 3.00024 15.9997 3.00024C15.8358 3.00024 15.6744 3.04054 15.5297 3.11758L0.529688 11.1176C0.369693 11.2028 0.235888 11.33 0.142587 11.4854C0.0492867 11.6409 0 11.8188 0 12.0001C0 12.1814 0.0492867 12.3593 0.142587 12.5147C0.235888 12.6702 0.369693 12.7973 0.529688 12.8826L3.99969 14.7338V20.7863C3.99865 21.2775 4.17942 21.7517 4.50719 22.1176C6.14469 23.9413 9.81344 27.0001 15.9997 27.0001C18.0509 27.017 20.0867 26.6455 21.9997 25.9051V30.0001C21.9997 30.2653 22.105 30.5196 22.2926 30.7072C22.4801 30.8947 22.7345 31.0001 22.9997 31.0001C23.2649 31.0001 23.5193 30.8947 23.7068 30.7072C23.8943 30.5196 23.9997 30.2653 23.9997 30.0001V24.9388C25.3037 24.1861 26.4821 23.2342 27.4922 22.1176C27.82 21.7517 28.0007 21.2775 27.9997 20.7863V14.7338L31.4697 12.8826C31.6297 12.7973 31.7635 12.6702 31.8568 12.5147C31.9501 12.3593 31.9994 12.1814 31.9994 12.0001C31.9994 11.8188 31.9501 11.6409 31.8568 11.4854C31.7635 11.33 31.6297 11.2028 31.4697 11.1176ZM15.9997 25.0001C10.5909 25.0001 7.40969 22.3576 5.99969 20.7863V15.8001L15.5297 20.8826C15.6744 20.9596 15.8358 20.9999 15.9997 20.9999C16.1636 20.9999 16.325 20.9596 16.4697 20.8826L21.9997 17.9338V23.7263C20.4247 24.4613 18.4397 25.0001 15.9997 25.0001ZM25.9997 20.7813C25.4002 21.4465 24.7296 22.0438 23.9997 22.5626V16.8663L25.9997 15.8001V20.7813ZM23.4997 14.8676L23.4722 14.8513L16.4722 11.1176C16.2386 10.9983 15.9676 10.9755 15.7174 11.0542C15.4672 11.1328 15.258 11.3066 15.1347 11.5381C15.0114 11.7695 14.984 12.0402 15.0583 12.2917C15.1327 12.5431 15.3029 12.7554 15.5322 12.8826L21.3747 16.0001L15.9997 18.8663L3.12469 12.0001L15.9997 5.13383L28.8747 12.0001L23.4997 14.8676Z" />
-                    </svg>
-                 </span>
-                <h4 class="mb-0 card-text fs-5">SMA (Putra)</h4>
-             </a>
-          </div>
-     
-       </div>
-    </div>
- </section>
- <!--Industry we serve end-->
-<!--Trusted worldwide end-->
-<!--Call to action start-->
-<section class="my-lg-7 py-5">
-    <div class="container">
-        <div
-            class="row bg-pattern bg-primary-gradient rounded-3 py-lg-7 py-5 g-0">
-            <div class="col-md-8 offset-md-2">
-                <div class="text-center position-relative z-1 px-5"
-                    >
-                    <div class="mb-5">
-                        <h3 class="h2 text-white-stable mb-3">Bergabung Bersama Kami</h3>
-                        <p class="mb-0 text-white-stable">
-                            Pondok Pesantren Tahfizhul Qur’an Imam Asy-Syathiby Wahdah Islamiyah merupakan wadah yang dapat dijadikan sebagai motor penggerak masyarakat untuk dapat bersama-sama mengembalikan citra Indonesia yang merupakan negara muslim dengan menjaga amal ibadah yang wajib maupun yang sunnah.
-                        </p>
-                    </div>
-
-                    <a href="{% url 'register' %}" class="btn btn-dark">Register Now</a>
-                </div>
-            </div>
+        </div>
+        <div class="card-icon-services">
+   
+            <i class="fa-solid fa-photo-film fa-2x"></i>
         </div>
     </div>
-</section>
-<!--Call to action end-->
+    <div class="card-services">
+        <div class="card-content-services">
+            <h3>Web & Mobile App</h3>
+            <p>Menyediakan solusi teknologi informasi dan layanan berbasis web dan aplikasi web.
+            </p>
+        </div>
+        <div class="card-icon-services">
+         
+            <i class="fa-brands fa-react fa-2x"></i>
+        </div>
+    </div>
+    <div class="card-services">
+        <div class="card-content-services">
+            <h3>Pengolahan Data</h3>
+            <p>Aktivitas Pengolahan Data.
+        & Portal Web dan/Atau Platform digital dengan tujuan komersil.
+                </p>
+        </div>
+        <div class="card-icon-services">
+            <i class="fa-solid fa-database fa-2x"></i>
+        </div>
+    </div>
+    <div class="card-services">
+        <div class="card-content-services">
+            <h3>Pelatihan Edukasi</h3>
+            <p>Pelatihan kerja teknlogi informasi dan komunikasi swasta, industri kreatif swasta,  Pelatihan Kerja Teknologi informasi dan komunikasi Perusahan.
+                </p>
+        </div>
+        <div class="card-icon">
+            <i class="fa-solid fa-book-open fa-2x"></i>
+        </div>
+    </div>
 
-<section class="py-xl-9 py-5">
-    <div class="container">
-       <div class="row gy-7 gx-lg-7">
-          <div class="col-lg-6 col-12" data-cue="fadeIn" data-show="true" style="animation-name: fadeIn; animation-duration: 600ms; animation-timing-function: ease; animation-delay: 0ms; animation-direction: normal; animation-fill-mode: both;">
-             <div class="d-flex flex-column gap-3 mb-6">
-                <div>
-                   <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M12.5 7.97559H5C4.46957 7.97559 3.96086 8.1863 3.58579 8.56137C3.21071 8.93644 3 9.44515 3 9.97559V17.9756C3 18.506 3.21071 19.0147 3.58579 19.3898C3.96086 19.7649 4.46957 19.9756 5 19.9756H12.5V20.9756C12.5 22.0365 12.0786 23.0539 11.3284 23.804C10.5783 24.5542 9.56087 24.9756 8.5 24.9756C8.23478 24.9756 7.98043 25.0809 7.79289 25.2685C7.60536 25.456 7.5 25.7104 7.5 25.9756C7.5 26.2408 7.60536 26.4952 7.79289 26.6827C7.98043 26.8702 8.23478 26.9756 8.5 26.9756C10.0908 26.9739 11.616 26.3413 12.7408 25.2164C13.8657 24.0915 14.4983 22.5664 14.5 20.9756V9.97559C14.5 9.44515 14.2893 8.93644 13.9142 8.56137C13.5391 8.1863 13.0304 7.97559 12.5 7.97559ZM12.5 17.9756H5V9.97559H12.5V17.9756ZM27 7.97559H19.5C18.9696 7.97559 18.4609 8.1863 18.0858 8.56137C17.7107 8.93644 17.5 9.44515 17.5 9.97559V17.9756C17.5 18.506 17.7107 19.0147 18.0858 19.3898C18.4609 19.7649 18.9696 19.9756 19.5 19.9756H27V20.9756C27 22.0365 26.5786 23.0539 25.8284 23.804C25.0783 24.5542 24.0609 24.9756 23 24.9756C22.7348 24.9756 22.4804 25.0809 22.2929 25.2685C22.1054 25.456 22 25.7104 22 25.9756C22 26.2408 22.1054 26.4952 22.2929 26.6827C22.4804 26.8702 22.7348 26.9756 23 26.9756C24.5908 26.9739 26.116 26.3413 27.2408 25.2164C28.3657 24.0915 28.9983 22.5664 29 20.9756V9.97559C29 9.44515 28.7893 8.93644 28.4142 8.56137C28.0391 8.1863 27.5304 7.97559 27 7.97559ZM27 17.9756H19.5V9.97559H27V17.9756Z" fill="#7f2a27"></path>
-                   </svg>
-                </div>
-                <div>
-                   <h2>Testimonials</h2>
-                   <p class="mb-0">Apa kata mereka tentang Ponpes Imam Asy-syathiby?</p>
-                </div>
-             </div>
-             <div class="swiper sliderSwiper swiper-initialized swiper-horizontal swiper-backface-hidden" data-cue="zoomIn" data-show="true" style="animation-name: zoomIn; animation-duration: 600ms; animation-timing-function: ease; animation-delay: 0ms; animation-direction: normal; animation-fill-mode: both;">
-            <div class="swiper-wrapper pb-8 mx-auto" id="swiper-wrapper-13ba4f3961063f557" aria-live="off" style="transition-duration: 0ms; transform: translate3d(-1360px, 0px, 0px); transition-delay: 0ms;">
-                
-                <div class="swiper-slide swiper-slide-next" role="group" aria-label="2 / 3" data-swiper-slide-index="0" style="width: 680px;">
-                      <div class="card shadow-sm">
-                        
-                            <div class="card-body">
-                                <div class="d-flex flex-column gap-4">
-                                   <div>
-                                      <p class="mb-0 fst-italic lead text-dark">
-                                        Apa kata mereka tentang Ponpes Imam Asy-syathiby?
-                                      </p>
-                                   </div>
-                               <div class="d-flex align-items-center gap-3">
-                                <div class="position-relative">
-                                    <img src="https://i.ytimg.com/vi/IalDoI40bOg/mqdefault.jpg" alt="about" class="rounded-3 img-fluid">
+    <div class="card-services">
+        <div class="card-content-services">
+            <h3>Digital Learning</h3>
+            <p>Tempat belajar pelaku UMKM dalam berjualan online</p>
+        </div>
+        <div class="card-icon">
+            <i class="fa-solid fa-radiation fa-2x"></i>
+        </div>
+    </div>
+</div>
+</div>
+<!-- 
+<div class="card-container-services-testimoni">
+        <div class="card-text">
+            <p class="text-center">Testimonial Kami</p>
+            <h1 class="title-services">Transforming Ideas into Digital Realities</h1>
+        </div>
+    <div class="quote-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-quote text-primary" viewBox="0 0 16 16">
+            <path d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 9 7.558V11a1 1 0 0 0 1 1h2Zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 3 7.558V11a1 1 0 0 0 1 1h2Z"></path>
+        </svg>
+    </div>
 
-                                    <a href="https://www.youtube.com/watch?v=IalDoI40bOg&t=6s" class="play-btn glightbox position-absolute top-50 start-50 translate-middle icon-shape icon-xl rounded-circle text-primary">
-                                       <i class="bi bi-play-fill"></i>
-                                    </a>
-                                 </div>
-                                  <div>
-                                     <h5 class="mb-0">Ust. Muhammad Ikhwan Jalil</h5>
-                                     <small>Dewan Syuro DPP WI</small>
-                                  </div>
-                               </div>
-                            </div>
-                         </div>
-                      </div>
-                   </div>
-                   
-                   <div class="swiper-slide swiper-slide-next" role="group" aria-label="2 / 3" data-swiper-slide-index="1" style="width: 680px;">
-                    <div class="card shadow-sm">
-                       <div class="card-body">
-                          <div class="d-flex flex-column gap-4">
-                             <div>
-                                <p class="mb-0 fst-italic lead text-dark">
-                                  Apa kata mereka tentang Ponpes Imam Asy-syathiby?
-                                </p>
-                             </div>
+    <div class="testimonial">
+       
+        <div class="testimonial-content">
+            <p>Aksinomi sangat terkesan dengan profesionalisme dan dedikasi tim Padinusantara dalam mengembangkan situs web kami. Dari tahap perencanaan hingga peluncuran, mereka selalu memberikan solusi yang inovatif dan responsif terhadap kebutuhan kami.</p>
+            <img src="https://aksinomisulampua.org/wp-content/uploads/2024/05/1693549487385-2048x1152-1.webp" alt="Kualitas" class="client-img">
+        </div>
+       
+        <h4>Aksinomisulampua.org</h4>
+        <small>Creative Director</small>
+    </div>
 
-                             <div class="d-flex align-items-center gap-3">
-                              <div class="position-relative">
-                                  <img src="https://i.ytimg.com/vi/yD5g7JpkJ5E/mqdefault.jpg" alt="about" class="rounded-3 img-fluid">
+    <div class="testimonial">
+       
+        <div class="testimonial-content">
+            <p>Aksinomi sangat terkesan dengan profesionalisme dan dedikasi tim Padinusantara dalam mengembangkan situs web kami. Dari tahap perencanaan hingga peluncuran, mereka selalu memberikan solusi yang inovatif dan responsif terhadap kebutuhan kami.</p>
+            <img src="https://aksinomisulampua.org/wp-content/uploads/2024/05/1693549487385-2048x1152-1.webp" alt="Kualitas" class="client-img">
+        </div>
+       
+        <h4>Aksinomisulampua.org</h4>
+        <small>Creative Director</small>
+    </div>
+    
+</div> -->
 
-                                  <a href="https://www.youtube.com/watch?v=yD5g7JpkJ5E" class="play-btn glightbox position-absolute top-50 start-50 translate-middle icon-shape icon-xl rounded-circle text-primary">
-                                     <i class="bi bi-play-fill"></i>
-                                  </a>
-                               </div>
-                                <div>
-                                   <h5 class="mb-0">Ust. Syaibani Mujiono</h5>
-                                   <small>Sekjend DPP WI</small>
-                                </div>
-                             </div>
-                          </div>
-                       </div>
-                    </div>
-                 </div>
+<div class="card-container-services-testimoni">
+    <div class="card-text">
+        <p class="text-center">Testimonial Kami</p>
+        <h1 class="title-services">Transforming Ideas into Digital Realities</h1>
+    </div>
+    <div class="quote-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-quote text-primary" viewBox="0 0 16 16">
+            <path d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 9 7.558V11a1 1 0 0 0 1 1h2Zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 3 7.558V11a1 1 0 0 0 1 1h2Z"></path>
+        </svg>
+    </div>
 
-                 <div class="swiper-slide swiper-slide-next" role="group" aria-label="2 / 3" data-swiper-slide-index="1" style="width: 680px;">
-                    <div class="card shadow-sm">
-                       <div class="card-body">
-                          <div class="d-flex flex-column gap-4">
-                             <div>
-                                <p class="mb-0 fst-italic lead text-dark">
-                                  Apa kata mereka tentang Ponpes Imam Asy-syathiby?
-                                </p>
-                             </div>
+    <div class="testimonials-wrapper">
+        <div class="testimonial">
+            <div class="testimonial-content">
+                <p>Aksinomi sangat terkesan dengan profesionalisme dan dedikasi tim Padinusantara dalam mengembangkan situs web kami. Dari tahap perencanaan hingga peluncuran, mereka selalu memberikan solusi yang inovatif dan responsif terhadap kebutuhan kami.</p>
+                <img src="https://aksinomisulampua.org/wp-content/uploads/2024/05/1693549487385-2048x1152-1.webp" alt="Kualitas" class="client-img">
+            </div>
+            <h4>Aksinomisulampua.org</h4>
+            <small>Creative Director</small>
+        </div>
 
-                             <div class="d-flex align-items-center gap-3">
-                              <div class="position-relative">
-                                  <img src="https://i.ytimg.com/vi/8ChdFgKcosA/mqdefault.jpg" alt="about" class="rounded-3 img-fluid">
+        <div class="testimonial">
+            <div class="testimonial-content">
+                <p>Aksinomi sangat terkesan dengan profesionalisme dan dedikasi tim Padinusantara dalam mengembangkan situs web kami. Dari tahap perencanaan hingga peluncuran, mereka selalu memberikan solusi yang inovatif dan responsif terhadap kebutuhan kami.</p>
+                <img src="https://aksinomisulampua.org/wp-content/uploads/2024/05/1693549487385-2048x1152-1.webp" alt="Kualitas" class="client-img">
+            </div>
+            <h4>Aksinomisulampua.org</h4>
+            <small>Creative Director</small>
+        </div>
+    </div>
+</div>
 
-                                  <a href="https://www.youtube.com/watch?v=8ChdFgKcosA" class="play-btn glightbox position-absolute top-50 start-50 translate-middle icon-shape icon-xl rounded-circle text-primary">
-                                     <i class="bi bi-play-fill"></i>
-                                  </a>
-                               </div>
-                                <div>
-                                   <h5 class="mb-0">Bapak Drs. H. Muh. Syahrir, M.Si</h5>
-                                   <small>Pengawas Bina</small>
-                                </div>
-                             </div>
-                          </div>
-                       </div>
-                    </div>
-                 </div>
 
-                   
-                </div>
-                <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 1" aria-current="true"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span></div>
-             <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
-          </div>
-          <div class="col-lg-6 col-12" data-cue="fadeIn" data-show="true" style="animation-name: fadeIn; animation-duration: 600ms; animation-timing-function: ease; animation-delay: 200ms; animation-direction: normal; animation-fill-mode: both;">
-             <div class="d-flex flex-column gap-3 mb-6">
-                <div>
-                   <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-trophy text-primary" viewBox="0 0 16 16">
-                      <path d="M2.5.5A.5.5 0 0 1 3 0h10a.5.5 0 0 1 .5.5q0 .807-.034 1.536a3 3 0 1 1-1.133 5.89c-.79 1.865-1.878 2.777-2.833 3.011v2.173l1.425.356c.194.048.377.135.537.255L13.3 15.1a.5.5 0 0 1-.3.9H3a.5.5 0 0 1-.3-.9l1.838-1.379c.16-.12.343-.207.537-.255L6.5 13.11v-2.173c-.955-.234-2.043-1.146-2.833-3.012a3 3 0 1 1-1.132-5.89A33 33 0 0 1 2.5.5m.099 2.54a2 2 0 0 0 .72 3.935c-.333-1.05-.588-2.346-.72-3.935m10.083 3.935a2 2 0 0 0 .72-3.935c-.133 1.59-.388 2.885-.72 3.935M3.504 1q.01.775.056 1.469c.13 2.028.457 3.546.87 4.667C5.294 9.48 6.484 10 7 10a.5.5 0 0 1 .5.5v2.61a1 1 0 0 1-.757.97l-1.426.356a.5.5 0 0 0-.179.085L4.5 15h7l-.638-.479a.5.5 0 0 0-.18-.085l-1.425-.356a1 1 0 0 1-.757-.97V10.5A.5.5 0 0 1 9 10c.516 0 1.706-.52 2.57-2.864.413-1.12.74-2.64.87-4.667q.045-.694.056-1.469z" fill="#7f2a27"></path>
-                   </svg>
-                </div>
-                <div>
-                   <h2>Awards and Sertifikat</h2>
-                   <p class="mb-0">Accolades and Recognition: Celebrating Commitment to Excellence.</p>
-                </div>
-             </div>
-             <div class="row g-4">
-                <div class="col-xl-4 col-6 col-md-4" data-cue="zoomIn" data-show="true" style="animation-name: zoomIn; animation-duration: 600ms; animation-timing-function: ease; animation-delay: 0ms; animation-direction: normal; animation-fill-mode: both;">
-                   <div class="card card-lift text-center">
-                      <div class="d-flex justify-content-center align-items-center">
-                         <img src="https://man2padangpanjang.sch.id/wp-content/uploads/2022/08/OBA.jpg" height="100px" width="400px" alt="company" class="">
-                      </div>
-                   </div>
-                </div>
-                <div class="col-xl-4 col-6 col-md-4" data-cue="zoomIn" data-show="true" style="animation-name: zoomIn; animation-duration: 600ms; animation-timing-function: ease; animation-delay: 200ms; animation-direction: normal; animation-fill-mode: both;">
-                   <div class="card card-lift text-center">
-                      <div class="d-flex justify-content-center align-items-center">
-                         <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/New_Coat_of_Arms_of_Gowa.png" height="100px" width="100px" alt="company" class="">
-                      </div>
-                   </div>
-                </div>
-                <div class="col-xl-4 col-6 col-md-4" data-cue="zoomIn" data-show="true" style="animation-name: zoomIn; animation-duration: 600ms; animation-timing-function: ease; animation-delay: 400ms; animation-direction: normal; animation-fill-mode: both;">
-                   <div class="card card-lift text-center">
-                      <div class="d-flex justify-content-center align-items-center">
-                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Coat_of_arms_of_South_Sulawesi.svg/800px-Coat_of_arms_of_South_Sulawesi.svg.png" height="100px" width="100px" alt="company" class="">
-                      </div>
-                   </div>
-                </div>
+
+<div class="card-container-services">
+    <div class="card-text">
+        <p class="text-center">Berita Kami</p>
+        <h1 class="title-services">Article / News / Media</h1>
+    </div>
+    <div class="card-services-container">
+        {% for news in news_list %}
+        <div class="news-card">
+            {% if news.images %}
+            <img src="{{ news.images.url }}" alt="News Image" class="news-image">
+            {% endif %}
+            <div class="news-content">
+                <div class="news-badge">{{ news.category }}</div>
+                <h2>
+                    <a href="{% url 'news_detail' slug=news.slug %}">{{ news.title }}</a>
+                </h2>
+                <p>Melakukan Aktivitas Produksi Film, Video dan Program televisi oleh Swasta</p>
+             
+            </div>
+        </div>
+        {% endfor %}
+</div>
+</div>
+
+<div id="scrollToTeam" class="container-team">
+    <div class="team-header">
+        <span class="icon">★</span>
+        <h2>Our Team</h2>
+    </div>
+    <div class="team-grid">
+        <div class="team-card purple">
+            <h3>Team Updates</h3>
+            <span class="arrow">→</span>
+    
+        </div>
+        <div class="team-card black" onclick="toggleCard(this)">
+            <h3>Director</h3>
+            <p>Andi Hermanto</p>
+            <span class="plus">+</span>
+            <img src="/media/team/andi.jpg" alt="Photo" class="photo">
+        </div>
+        <div class="team-card purple" onclick="toggleCard(this)">
+            <h3>Data Analyst</h3>
+            <p>Syamsu Alam</p>
+            <span class="plus">+</span>
+            <img src="/media/team/alam.JPG" alt="Photo" class="photo">
+        </div>
+        <div class="team-card black" onclick="toggleCard(this)">
+            <h3>Developer / Designer</h3>
+            <p>Ahmad Risal</p>
+            <span class="plus">+</span>
+            <img src="your-photo-url.jpg" alt="Photo" class="photo">
+        </div>
+        <div class="team-card yellow" onclick="toggleCard(this)">
+            <h3>Designers</h3>
+            <p>Nurabdiansyah </p>
+            <span class="plus">+</span>
+            <img src="your-photo-url.jpg" alt="Photo" class="photo">
+        </div>
+        <div class="team-card black" onclick="toggleCard(this)">
+            <h3>Content Writer</h3>
+            <p>Bahrul Amsal</p>
+            <span class="plus">+</span>
+            <img src="/media/team/team2.jpeg" alt="Photo" class="photo">
+        </div>
+        <div class="team-card yellow" onclick="toggleCard(this)">
+            <h3>Full Stack Developer</h3>
+            <p>Muh Bahrul Uluma Rasyid</p>
+            <span class="plus">+</span>
+            <img src="your-photo-url.jpg" alt="Photo" class="photo">
+        </div>
+    </div>
+</div>
+
+<div class="container-footer">
+    <div class="card-contact">
+        <div class="logo-contact">
+            <img src="/media/assets/logo_v1.png" alt="Company Logo">
+        </div>
+        <div class="contact-info">
             
-             </div>
-          </div>
-       </div>
-    </div>
- </section>
-
-
-
- <!--asked question-->
- <section class="mb-xl-9 mb-4">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-10 offset-lg-1 col-md-12 col-12">
-                <div class="text-center mb-7">
-                    <h2>Frequently asked questions</h2>
-                    <p class="mb-0">
-                        Can’t find any answer for your question?
-                        <br />
-                        Ask our
-                        <a href="#" class="text-primary">customer
-                            support</a>
-                    </p>
-                </div>
-            </div>
+            <div class="card-text-contact">Praksis Digital Nusantara adalah perusahaan yang berdedikasi untuk menyediakan beragam layanan dalam berbagai bidang teknologi dan pendidikan.</div>
         </div>
-        <div class="row">
-            <div class="col-lg-10 offset-lg-1 col-md-12 col-12">
-                <div class="accordion" id="accordionExample">
-                    <div class="border mb-2 rounded-3 p-3">
-                        <h2 class="h5 mb-0">
-                            <a href="#"
-                                class="text-reset d-flex justify-content-between align-items-center"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#collapseOne"
-                                aria-expanded="false"
-                                aria-controls="collapseOne">
-                                Can I trial block before paying?
-                                <span class="chevron-arrow"><i
-                                        class="bi bi-chevron-down"></i></span>
-                            </a>
-                        </h2>
-                        <div id="collapseOne"
-                            class="accordion-collapse collapse"
-                            data-bs-parent="#accordionExample">
-                            <div class="mt-3">
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit. Quae harum adipisci
-                                possimus et. Iusto pariatur iste nam
-                                incidunt ratione modi.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="border mb-2 rounded-3 p-3">
-                        <h2 class="h5 mb-0">
-                            <a href="#"
-                                class="text-reset d-flex justify-content-between align-items-center"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#collapseTwo"
-                                aria-expanded="true"
-                                aria-controls="collapseTwo">
-                                How are additional plan billed?
-                                <span class="chevron-arrow"><i
-                                        class="bi bi-chevron-down"></i></span>
-                            </a>
-                        </h2>
-                        <div id="collapseTwo"
-                            class="accordion-collapse collapse show"
-                            data-bs-parent="#accordionExample">
-                            <div class="mt-3">
-                                Sed urna felis, dapibus quis leo nec, luctus
-                                auctor augue. Nam gravida placerat sem vitae
-                                rutrum. Integer accumsan, enim et facilisis
-                                eleifend, ante ligula
-                                ornare nulla, sed pharetra tortor diam eget
-                                magna.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="border mb-2 rounded-3 p-3">
-                        <h2 class="h5 mb-0">
-                            <a href="#"
-                                class="text-reset d-flex justify-content-between align-items-center"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#collapseThree"
-                                aria-expanded="false"
-                                aria-controls="collapseThree">
-                                When should I change my plan?
-                                <span class="chevron-arrow"><i
-                                        class="bi bi-chevron-down"></i></span>
-                            </a>
-                        </h2>
-                        <div id="collapseThree"
-                            class="accordion-collapse collapse"
-                            data-bs-parent="#accordionExample">
-                            <div class="mt-3">
-                                Lorem ipsum dolor sit, amet consectetur
-                                adipisicing elit. Inventore tenetur cum
-                                doloremque iusto molestiae. Minus beatae
-                                quam cumque modi quidem asperiores
-                                aliquam pariatur in iste.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="border mb-2 rounded-3 p-3">
-                        <h2 class="h5 mb-0">
-                            <a href="#"
-                                class="text-reset d-flex justify-content-between align-items-center"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#collapseFour"
-                                aria-expanded="false"
-                                aria-controls="collapseFour">
-                                What payment methods do you offer?
-                                <span class="chevron-arrow"><i
-                                        class="bi bi-chevron-down"></i></span>
-                            </a>
-                        </h2>
-                        <div id="collapseFour"
-                            class="accordion-collapse collapse"
-                            data-bs-parent="#accordionExample">
-                            <div class="mt-3">
-                                Lorem ipsum dolor sit, amet consectetur
-                                adipisicing elit. Inventore tenetur cum
-                                doloremque iusto molestiae. Minus beatae
-                                quam cumque modi quidem asperiores
-                                aliquam pariatur in iste.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="border mb-2 rounded-3 p-3">
-                        <h2 class="h5 mb-0">
-                            <a href="#"
-                                class="text-reset d-flex justify-content-between align-items-center"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#collapseFive"
-                                aria-expanded="false"
-                                aria-controls="collapseFive">
-                                What is your refund policy?
-                                <span class="chevron-arrow"><i
-                                        class="bi bi-chevron-down"></i></span>
-                            </a>
-                        </h2>
-                        <div id="collapseFive"
-                            class="accordion-collapse collapse"
-                            data-bs-parent="#accordionExample">
-                            <div class="mt-3">
-                                Lorem ipsum dolor sit, amet consectetur
-                                adipisicing elit. Inventore tenetur cum
-                                doloremque iusto molestiae. Minus beatae
-                                quam cumque modi quidem asperiores
-                                aliquam pariatur in iste.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="border mb-2 rounded-3 p-3">
-                        <h2 class="h5 mb-0">
-                            <a href="#"
-                                class="text-reset d-flex justify-content-between align-items-center"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#collapseSix"
-                                aria-expanded="false"
-                                aria-controls="collapseSix">
-                                How are paid plans billed when moving other
-                                plan?
-                                <span class="chevron-arrow"><i
-                                        class="bi bi-chevron-down"></i></span>
-                            </a>
-                        </h2>
-                        <div id="collapseSix"
-                            class="accordion-collapse collapse"
-                            data-bs-parent="#accordionExample">
-                            <div class="mt-3">
-                                Lorem ipsum dolor sit, amet consectetur
-                                adipisicing elit. Inventore tenetur cum
-                                doloremque iusto molestiae. Minus beatae
-                                quam cumque modi quidem asperiores
-                                aliquam pariatur in iste.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="contact-info">
+            <i class="fas fa-map-marker-alt"></i>
+            <div class="card-text-contact">Address: Jl. Sultan Alauddin No.259, Gn. Sari, Kec. Rappocini, Kota Makassar, Sulawesi Selatan 90221</div>
+        </div>
+        <div class="contact-info">
+            <i class="fas fa-phone"></i>
+            <div class="card-text-contact">Phone: +6282188051812 / +6281343803141</div>
+        </div>
+        <div class="contact-info">
+            <i class="fas fa-envelope"></i>
+            <div class="card-text-contact">Email: praksisdn@gmail.com</div>
         </div>
     </div>
-</section>
-<!--asked question-->
-<div class="container">
-    <div class="row">
-       <div class="col-lg-10 offset-lg-1 col-md-12">
-          <div class="row g-lg-10 gy-5 align-items-center">
-             <div class="col-md-6" data-cue="zoomIn" data-show="true" style="animation-name: zoomIn; animation-duration: 600ms; animation-timing-function: ease; animation-delay: 0ms; animation-direction: normal; animation-fill-mode: both;">
-                <div class="card bg-light">
-                   <div class="card-body p-5">
-                      <h3 class="mb-4">Temukan Kami</h3>
-                      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15892.900079404768!2d119.4809097!3d-5.227308!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbee16c3c6cd96f%3A0x95c85ecf584c79ff!2sSMA%20Tahfizhul%20Qur&#39;an%20Asy-Syathiby!5e0!3m2!1sen!2sid!4v1710210061788!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                   </div>
-                </div>
-             </div>
-             <div class="col-md-6" data-cue="zoomIn" data-show="true" style="animation-name: zoomIn; animation-duration: 600ms; animation-timing-function: ease; animation-delay: 0ms; animation-direction: normal; animation-fill-mode: both;">
-                <div class="mb-7 text-center text-lg-start">
-                   <div class="mb-3">
-                      <img src="/media/logo/logo.png" alt="avatar" class="avatar avatar-xl rounded-circle">
-                   </div>
-
-                   <h3 class="mb-0">Pondok Pesantren Imam Asy-syathiby Wahdah Islamiyah Gowa</h3>
-                   <small>Pondok Pesantren Tahfizhul Qur’an Imam Asy-Syathiby Wahdah Islamiyah Gowa merupakan pondok pesantren yang dinaungi oleh Yayasan Pesantren Imam Asysyatiby Wahdah Islamiyah (YPIA WI) yang fokus pada kegiatan tahfizh atau penghafalan Al-Qur’an, Bahasa Arab, pembelajaran Agama Islam dan umum</small>
-                </div>
-                <div class="d-flex mb-4">
-                   <div>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
-                         <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"></path>
-                      </svg>
-                   </div>
-                   <div class="ms-2">
-                      <h5 class="mb-0">Address:</h5>
-                      <small>Jln. Poros Malino Sungguminasa, Lingkungan Bontobaddo No.KM.04, Bontoramba, Kec. Somba Opu, Kabupaten Gowa, Sulawesi Selatan 92119</small>
-                   </div>
-                </div>
-                <div class="d-flex mb-4">
-                   <div>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
-                         <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"></path>
-                      </svg>
-                   </div>
-                   <div class="ms-2">
-                      <h5 class="mb-0">Phone:</h5>
-                      <small>
-                        +681242669378
-                        
-                         <span class="ms-3">+6281341379119</span>
-                      </small>
-                   </div>
-                </div>
-                <div class="d-flex mb-4">
-                   <div>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-check" viewBox="0 0 16 16">
-                         <path d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-.966-.741l5.64-3.471L8 9.583l7-4.2V8.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2H2Zm3.708 6.208L1 11.105V5.383l4.708 2.825ZM1 4.217V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.217l-7 4.2-7-4.2Z"></path>
-                         <path d="M16 12.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Zm-1.993-1.679a.5.5 0 0 0-.686.172l-1.17 1.95-.547-.547a.5.5 0 0 0-.708.708l.774.773a.75.75 0 0 0 1.174-.144l1.335-2.226a.5.5 0 0 0-.172-.686Z"></path>
-                      </svg>
-                   </div>
-                   <div class="ms-2">
-                      <h5 class="mb-0">E-mail:</h5>
-
-                      <small>
-                         <a href="#!" class="text-reset">syathiby.gowa@gmail.com</a>
-                         
-                      </small>
-                   </div>
-                </div>
-                <div>
-                   <a href="https://web.facebook.com/ppsimamsyathiby?_rdc=1&_rdr" class="text-reset btn btn-facebook btn-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
-                        <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
-                      </svg>
-                   </a>
-                
-                   <a href="https://www.youtube.com/@imamsyathiby" class="text-reset btn btn-youtube btn-icon">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
-                         <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"></path>
-                      </svg>
-                   </a>
-                   <a href="https://www.instagram.com/syathiby.gowa/" class="text-reset btn btn-instagram btn-icon">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
-                         <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path>
-                      </svg>
-                   </a>
-                </div>
-             </div>
-          </div>
-       </div>
+    <div class="card-maps">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3973.682885082719!2d119.43846667498232!3d-5.154634594822683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbee357e932b365%3A0x1cea0d636cfd21d4!2sSquid%20Coffee!5e0!3m2!1sen!2sid!4v1717088472229!5m2!1sen!2sid" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
- </div>
-</main>
+</div>
 
 
 {% endblock %}

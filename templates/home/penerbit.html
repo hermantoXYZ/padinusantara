@@ -1,0 +1,81 @@
+{% extends 'home/base.html' %}
+{% block title %} Penerbit - PADINUSANTARA.COM {% endblock %}
+
+{% block content %}
+
+
+<!-- <div class="pattern-square"> -->
+    <div class="hero-page">
+        <h1>PENERBIT PADI NUSANTARA</h1>
+        <img src="/media/assets/book.jpg" alt="Hero Page">
+    </div>
+
+    
+<div class="card-container-services">
+    <div class="card-text">
+        <p class="text-center">Layanan Kami</p>
+        <h1 class="title-services">Transforming Ideas into Digital Realities</h1>
+    </div>
+
+    <div class="card-services-container">
+    <div class="card-services card-services-new-color">
+        <div class="card-content-services">
+            <h3>Editing</h3>
+            <p> Proses revisi dan penyuntingan konten naskah, termasuk perbaikan tata bahasa, ejaan, struktur kalimat.
+            </p>
+        </div>
+        <div class="card-icon-services">
+            <img src="/media/icon/editing.png" alt="Description of the image" class="icon-img">
+        </div>
+    </div>
+    <div class="card-services">
+        <div class="card-content-services">
+            <h3>Layoting</h3>
+            <p>Proses penataan visual naskah, meliputi pengaturan teks, gambar, margin, font, dan elemen desain lainnya</p>
+        </div>
+        <div class="card-icon-services">
+            <img src="/media/icon/layout.png" alt="Description of the image" class="icon-img">
+        </div>
+    </div>
+    <div class="card-services card-services-percetakan">
+        <div class="card-content-services">
+            <h3>Percetakan Naskah</h3>
+            <p>Menyediakan layanan percetakan naskah profesional yang memastikan hasil cetakan berkualitas tinggi.
+            </p>
+        </div>
+        <div class="card-icon-services">
+            <img src="/media/icon/percetakan.png" alt="Description of the image" class="icon-img">
+        </div>
+    </div>
+    <div class="card-services">
+        <div class="card-content-services">
+            <h3>Publikasi Naskah</h3>
+            <p>Menyediakan layanan publikasi naskah yang membantu karya Anda menjangkau audiens lebih luas
+                </p>
+        </div>
+        <div class="card-icon-services">
+          <img src="/media/icon/publih.png" alt="publih" class="icon-img">
+        </div>
+    </div>
+    
+    </div>
+</div>
+</div>
+
+    <div class="container-book">
+        <h1>Best Seller</h1>
+        <div class="book-list">
+            {% for buku in buku %}
+            <div class="book">
+                {% if buku.images %}
+                <img src="{{ buku.images.url }}" alt="{{ buku.judul }}">
+                {% endif %}
+                <h2>{{ buku.judul }}</h2>
+                <p>{{ buku.harga }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+{% endblock %}

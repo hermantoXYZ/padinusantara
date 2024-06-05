@@ -3,7 +3,7 @@ from .forms import SignUpForm, LoginForm, ContactForm
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import user_passes_test
 from django.contrib.auth import logout
-from .models import Stats, PostNews, Page, Program
+from .models import Stats, PostNews, Page, Program, Buku
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib import messages
 
@@ -30,7 +30,11 @@ def index(request):
         'news_list' : news_list
     }
     
-    return render(request, 'home/indeks.html', context)
+    return render(request, 'home/index.html', context)
+
+def daftar_buku(request):
+    buku_list = Buku.objects.all()
+    return render(request, 'home/penerbit.html', {'buku': buku_list})
 
 def news_detail(request, slug):
     news = get_object_or_404(PostNews, slug=slug)

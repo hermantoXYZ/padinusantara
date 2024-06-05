@@ -1,7 +1,11 @@
 from django.contrib import admin
-from .models import User, Stats, PostNews, Media, Contact, Page, Program
+from .models import User, Stats, PostNews, Media, Contact, Page, Program, Buku
 from tinymce.widgets import TinyMCE
 from django.db import models
+
+
+
+
 
 
 class PostNewsAdmin(admin.ModelAdmin):
@@ -24,8 +28,13 @@ class ProgramAdmin (admin.ModelAdmin):
         models.TextField: {'widget': TinyMCE()}
     }
 
+class BukuAdmin(admin.ModelAdmin):
+    list_display = ('judul', 'harga', 'ISBN', 'berat')
+    search_fields = ('judul', 'ISBN')
+
 admin.site.register(User)
 admin.site.register(Stats)
+
 
 admin.site.register(PostNews, PostNewsAdmin)
 PostNews._meta.verbose_name_plural = "Post News"
@@ -41,3 +50,6 @@ Page._meta.verbose_name_plural = "Halaman"
 
 admin.site.register(Program, ProgramAdmin)
 Program._meta.verbose_name_plural = "Program"
+
+admin.site.register (Buku, BukuAdmin)
+Buku._meta.verbose_name_plural = "Buku"

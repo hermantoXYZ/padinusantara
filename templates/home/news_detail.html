@@ -3,45 +3,18 @@
 {% block title %}{{ news.title }}{% endblock %}
 {% block content %}
 
-<div class="pattern-square"></div>
-<div class="py-xl-9 py-4">
-<div class="container">
-   <div class="row">
-<article class="col-lg-8 offset-lg-2">
-    <h1>{{ news.title }}</h1>
-    <div class="d-flex align-items-center mt-lg-6 mt-4">
-       <div class="me-5">
-          <span class="fs-6">Written by</span>
-          <div class="d-flex align-items-center mt-2">
-             <img src="/media/assets/admin.png" alt="Avatar" class="avatar avatar-xs rounded-circle">
-             <div class="ms-2">
-                <a href="#" class="text-reset fs-6">{{ news.author }}</a>
-             </div>
-          </div>
-       </div>
-       <div>
-          <span class="fs-6">Published on</span>
-          <div class="mt-2 text-dark">
-             <span class="fs-6">{{ news.created_at }}</span>
-          </div>
-       </div>
-    </div>
-    {% if news.images %}
-    <figure class="my-6">
-       <img src="{{ news.images.url }}" alt="{{ news.title }}" class="rounded-3 img-fluid w-100">
-    </figure>
-    {% endif %}
- 
-      {{ news.content|safe|linebreaks }}
-  
-    <div class="card-body">
-        <h5 class="mb-4">Category</h5>
-        <a href="#" class="btn btn-outline-primary btn-sm me-2 mb-2">{{ news.category }}</a>
-        </div>
-    
+<div class="hero-page-news">
+   {% if news.images %}
+   <img src="{{ news.images.url }}" alt="Hero Page">
+   {% endif %}
 
- </article>
 </div>
+<div class="title-detail-page">
+    <h1>{{ news.title }}</h1>
+    <span>{{ news.created_at }}</span>
 </div>
+
+<div class="desc-detail-page">
+<p>{{ news.content|safe|linebreaks }}</p>
 </div>
 {% endblock %}
