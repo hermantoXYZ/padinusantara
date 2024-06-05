@@ -3,13 +3,15 @@ from .forms import SignUpForm, LoginForm, ContactForm
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import user_passes_test
 from django.contrib.auth import logout
-from .models import Stats, PostNews, Page, Program, Buku
+from .models import Stats, PostNews, Page, Program, Buku, Testimoni
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib import messages
 
 def index(request):
     stats = Stats.objects.first()
     news_list = PostNews.objects.all()
+    testimoni_list = Testimoni.objects.all()
+    
 
      # Tampilkan 3 posting per halaman
     paginator = Paginator(news_list, 3)
@@ -27,7 +29,8 @@ def index(request):
 
     context = {
         'stats': stats,
-        'news_list' : news_list
+        'news_list' : news_list,
+        'testimoni_list' : testimoni_list
     }
     
     return render(request, 'home/index.html', context)

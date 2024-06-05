@@ -333,6 +333,14 @@ body {
     border-radius: 10px;
     cursor: pointer;
     margin-left: 50px;
+    text-decoration: none;
+}
+
+
+.info-button:hover {
+  
+    background-color: #feb711;
+     text-decoration: none;
 }
 
 .info-button span {
@@ -924,6 +932,19 @@ footer {
         width: 36px;
         height: 36px;
     }
+}
+
+.swiper-container {
+    width: 100%;
+    height: 300px;
+}
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 

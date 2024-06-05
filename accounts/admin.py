@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import User, Stats, PostNews, Media, Contact, Page, Program, Buku
+from .models import User, Stats, PostNews, Media, Contact, Page, Program, Buku, Testimoni
 from tinymce.widgets import TinyMCE
 from django.db import models
 
@@ -32,6 +32,11 @@ class BukuAdmin(admin.ModelAdmin):
     list_display = ('judul', 'harga', 'ISBN', 'berat')
     search_fields = ('judul', 'ISBN')
 
+
+class TestimoniAdmin(admin.ModelAdmin):
+    list_display = ('judul', 'jabatan')
+    search_fields = ('images', 'judul', 'jabatan')
+
 admin.site.register(User)
 admin.site.register(Stats)
 
@@ -53,3 +58,6 @@ Program._meta.verbose_name_plural = "Program"
 
 admin.site.register (Buku, BukuAdmin)
 Buku._meta.verbose_name_plural = "Buku"
+
+admin.site.register (Testimoni, TestimoniAdmin)
+Testimoni._meta.verbose_name_plural = "Testimoni"

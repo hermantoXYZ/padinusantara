@@ -118,3 +118,15 @@ class Buku(models.Model):
 
     def __str__(self):
         return self.judul
+    
+
+    
+class Testimoni(models.Model):
+    images = models.ImageField(upload_to=rename_image, null=True, blank=True)
+    judul = models.CharField(max_length=100)
+    jabatan = models.CharField(max_length=100)
+    link = models.URLField()
+    content = models.TextField()
+
+    def __str__(self):
+        return self.judul
